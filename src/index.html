@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Квартимолл</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+<div id="app" class="contaner random_app">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-2">
+            <h3>Диапазон выдаваемых чисел:</h3>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="">от</label>
+                    <input type="text" class="form-control" :disabled="!edit" v-model="min">
+                </div>
+                <div class="form-group">
+                    <label>по</label>
+                    <input type="text" class="form-control" :disabled="!edit" v-model="max">
+                </div>
+            </div>
+            <div>
+                <div class="warning-msg">
+                    <div class="text-danger text-center" v-show="incorrect">Не корректный диапазон!</div>
+                </div>
+                <div class="form-group offset_top">
+                    <button class="btn-lg btn-primary btn-size" @click="onEdit()" :disabled="preload">
+                        <span v-if="edit">Применить</span>
+                        <span v-else>Изменить</span>
+                    </button>
+                </div>
+                <div class="form-group offset_top">
+                    <button class="btn-size btn-lg btn-success " @click="getCount()" :disabled="edit">Выбрать лот
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button class="btn-size btn-lg btn-warning" @click="reset()" :disabled="edit">сбросить</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-4">
+            <div class="lot">
+                <p v-if="preload"><img src="/img/preload.gif" alt="preload"></p>
+                <p v-else>{{count}}</p>
+            </div>
+            <div>
+                <p v-show="theEnd" class="end offset_top">Лоты закончились!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/main.js"></script>
+</body>
+</html>
