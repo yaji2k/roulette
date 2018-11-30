@@ -23,12 +23,12 @@ new Vue({
                         if (this.arr[i] === count) {
                             this.count = count;
                             this.arr.splice(i, 1);
-                            // return;
+                            setTimeout(() => {
+                                this.preload = false;
+                             }, 4000);
+                            return;
                         }
                     }
-                    setTimeout(() => {
-                        this.preload = false;
-                    }, 4000);
                 }
             } else {
                 this.theEnd = true;
@@ -68,7 +68,4 @@ new Vue({
             }
         }
     },
-    // mounted() {
-    //     this.setArray();
-    // }
 });
