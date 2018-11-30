@@ -1,7 +1,7 @@
-
 .random_app {
   margin: 25px auto;
 }
+
 .lot {
   margin: 0;
   padding: 0;
@@ -10,26 +10,33 @@
   height: 100px;
   text-align: center;
 }
+
 .end {
   font-size: 24px;
   height: 24px;
   text-align: center;
   margin: 0;
 }
+
 .btn-size {
   min-width: 150px;
   width: 200px;
 }
+
 .offset_top {
   margin-top: 50px;
 }
+
 .warning-msg {
   height: 25px;
   padding-top: 10px;
 }
+
 .small-input {
   width: 20px;
 }
+
 button:disabled {
   opacity: 0.5;
 }
+/*# sourceMappingURL=main.css.map */
