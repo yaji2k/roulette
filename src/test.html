@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Квартимолл Рандомайзер</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/test.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+
+</head>
+<body>
+<div class='container'>
+
+    <div class='background'>
+        <div class="pink"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+        <div class="yellow"></div>
+    </div>
+
+    <div class='content-wrap' id="app">
+        <div class='content'>
+            <div class='row'>
+                <div class='col'>
+                    <img src='img/image_001.jpg'>
+                </div>
+                <div class='col'>
+                    <h1>Случайное
+                        <small>число</small>
+                    </h1>
+                    <h1 class='number' v-if="preload"><img src="/img/preload.gif" alt="preload"></h1>
+                    <h1 class='number' v-else>{{count}}</h1>
+                    <button class='button' @click="getCount()" :disabled="preload">Сгенерировать</button>
+                    <h5>Диапазон случайных чисел</h5>
+                    <div class="form">
+                        <div class='field'>
+                            <label>от</label>
+                            <input type='number' :value="min" @input="changeMin($event.target.value)"
+                                   :disabled="preload">
+                        </div>
+                        <div class='field'>
+                            <label>до</label>
+                            <input type='number' :value="max" @input="changeMax($event.target.value)"
+                                   :disabled="preload">
+                        </div>
+                    </div>
+                </div>
+                <div class='col'>
+                    <img src='img/image_002.jpg'>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/main_v2.js"></script>
+</body>
+</html>
